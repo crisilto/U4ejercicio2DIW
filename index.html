@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Ejercicio CSS 3 - Layout 3 columnas</h1>
+        <div class="columns">
+            <div id="left">
+                Columna de la izquierda, en esta columna podríamos poner algunas cosas.
+            </div>
+            <div id="main">
+                Columna de contenido
+                <br>
+                El contenido de la página iría en esta sección
+                <br>
+                El diseño es bastante bueno pero las columnas no se alargan todo lo que nos gustaría.
+                <br>
+                tendremos que hacer posteriormente una versión que mejore esto :D.
+                <br>
+                Esta es mi versión.
+            </div>
+            <div id="right">
+                Columna de la derecha
+            </div>
+        </div>
+
+        <footer>
+            <p>Pie de página</p>
+            <div id="reproductor">
+                <audio id="player" src="audio/cancion.mp3"></audio>
+                <img class="stop" src="img/stop.jpg" onclick="stopAudio()"></img>
+                <img class="play" src="img/play.jpg" onclick="playAudio()"></img>
+                <img class="pause" src="img/pause.jpg" onclick="pauseAudio()"></img>
+                <img class="bajar" src="img/bajar.jpg" onclick="decreaseVolume()"></img>
+                <img class="subir" src="img/subir.jpg" onclick="increaseVolume()"></img>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const player = document.getElementById("player");
+        function stopAudio(){
+            player.pause();
+            player.currentTime = 0;
+        }
+
+        function playAudio(){
+            player.play();
+        }
+
+        function pauseAudio(){
+            player.pause();
+        }
+
+        function decreaseVolume(){
+            player.volume >= 0.1 ? player.volume -= 0.1 : player.volume = 0;
+        }
+
+        function increaseVolume(){
+            player.volume <= 0.9 ? player.volume += 0.1 : player.volume = 1;
+        }
+    </script>
+</body>
+
+</html>
